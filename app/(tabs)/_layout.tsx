@@ -8,6 +8,8 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+import Ionicons from '@expo/vector-icons/Ionicons';
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -30,16 +32,16 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Calculadora',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color="green" />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="info"
         options={{
           title: 'informação',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="information-circle-sharp" size={28} color="green" />
         }}
-      />
+        />
     </Tabs>
   );
 }

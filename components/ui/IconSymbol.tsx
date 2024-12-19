@@ -1,10 +1,12 @@
 // Este arquivo é um fallback para usar MaterialIcons no Android e na web.
 
+import AntDesign from '@expo/vector-icons/AntDesign';
+
+
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { SymbolWeight } from 'expo-symbols';
 import React from 'react';
 import { OpaqueColorValue, StyleProp, ViewStyle } from 'react-native';
-import Entypo from '@expo/vector-icons/Entypo';
 
 
 // Adicione seu SFSymbol aos mapeamentos de MaterialIcons aqui.
@@ -45,4 +47,3 @@ export function IconSymbol({
 }) {
   return <MaterialIcons color={color} size={size} name={MAPPING[name]} style={style} />;
 }
-<Entypo name="info-with-circle" size={24} color="black" />

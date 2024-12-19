@@ -3,7 +3,6 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-import Entypo from '@expo/vector-icons/Entypo';
 
 
 import React, { useState } from 'react';
@@ -305,7 +304,5 @@ const styles = StyleSheet.create({
     width: '94%',
   },
 });
-
-<Entypo name="info-with-circle" size={24} color="black" />
 
 export default App;
