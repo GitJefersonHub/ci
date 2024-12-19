@@ -1,14 +1,16 @@
-// This file is a fallback for using MaterialIcons on Android and web.
+// Este arquivo é um fallback para usar MaterialIcons no Android e na web.
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { SymbolWeight } from 'expo-symbols';
 import React from 'react';
 import { OpaqueColorValue, StyleProp, ViewStyle } from 'react-native';
+import Entypo from '@expo/vector-icons/Entypo';
 
-// Add your SFSymbol to MaterialIcons mappings here.
+
+// Adicione seu SFSymbol aos mapeamentos de MaterialIcons aqui.
 const MAPPING = {
-  // See MaterialIcons here: https://icons.expo.fyi
-  // See SF Symbols in the SF Symbols app on Mac.
+  // Veja MaterialIcons aqui: https://icons.expo.fyi
+  // Veja Símbolos SF no aplicativo Símbolos SF no Mac.
   'house.fill': 'home',
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
@@ -17,16 +19,18 @@ const MAPPING = {
   Record<
     import('expo-symbols').SymbolViewProps['name'],
     React.ComponentProps<typeof MaterialIcons>['name']
+    
   >
 >;
 
 export type IconSymbolName = keyof typeof MAPPING;
 
 /**
- * An icon component that uses native SFSymbols on iOS, and MaterialIcons on Android and web. This ensures a consistent look across platforms, and optimal resource usage.
+ * Um componente de ícone que usa SFSymbols nativos no iOS e MaterialIcons no Android e na web. Isso garante uma aparência consistente em todas as plataformas e uso ideal de recursos.
  *
- * Icon `name`s are based on SFSymbols and require manual mapping to MaterialIcons.
+ * Os `nomes` dos ícones são baseados em SFSymbols e exigem mapeamento manual para MaterialIcons.
  */
+
 export function IconSymbol({
   name,
   size = 24,
@@ -41,3 +45,4 @@ export function IconSymbol({
 }) {
   return <MaterialIcons color={color} size={size} name={MAPPING[name]} style={style} />;
 }
+<Entypo name="info-with-circle" size={24} color="black" />

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * This script is used to reset the project to a blank state.
- * It moves the /app, /components, /hooks, /scripts, and /constants directories to /app-example and creates a new /app directory with an index.tsx and _layout.tsx file.
- * You can remove the `reset-project` script from package.json and safely delete this file after running it.
+ * Este script é usado para redefinir o projeto para um estado em branco.
+ * Ele move os diretórios /app, /components, /hooks, /scripts e /constants para /app-example e cria um novo diretório /app com um arquivo index.tsx e _layout.tsx.
+ * Você pode remover o script `reset-project` do package.json e excluir este arquivo com segurança após executá-lo.
  */
 
 const fs = require("fs");
@@ -41,11 +41,11 @@ export default function RootLayout() {
 
 const moveDirectories = async () => {
   try {
-    // Create the app-example directory
+    // Crie o diretório app-example
     await fs.promises.mkdir(newDirPath, { recursive: true });
     console.log(`📁 /${newDir} directory created.`);
 
-    // Move old directories to new app-example directory
+    // Mover diretórios antigos para o novo diretório app-example
     for (const dir of oldDirs) {
       const oldDirPath = path.join(root, dir);
       const newDirPath = path.join(root, newDir, dir);
@@ -57,17 +57,17 @@ const moveDirectories = async () => {
       }
     }
 
-    // Create new /app directory
+    // Criar novo diretório /app
     const newAppDirPath = path.join(root, newAppDir);
     await fs.promises.mkdir(newAppDirPath, { recursive: true });
     console.log("\n📁 New /app directory created.");
 
-    // Create index.tsx
+    // Criar index.tsx
     const indexPath = path.join(newAppDirPath, "index.tsx");
     await fs.promises.writeFile(indexPath, indexContent);
     console.log("📄 app/index.tsx created.");
 
-    // Create _layout.tsx
+    // Criar _layout.tsx
     const layoutPath = path.join(newAppDirPath, "_layout.tsx");
     await fs.promises.writeFile(layoutPath, layoutContent);
     console.log("📄 app/_layout.tsx created.");

@@ -1,6 +1,9 @@
 import { SymbolView, SymbolViewProps, SymbolWeight } from 'expo-symbols';
 import { StyleProp, ViewStyle } from 'react-native';
 
+
+import Entypo from '@expo/vector-icons/Entypo';
+
 export function IconSymbol({
   name,
   size = 24,
@@ -30,3 +33,4 @@ export function IconSymbol({
     />
   );
 }
+<Entypo name="info-with-circle" size={24} color="black" />
