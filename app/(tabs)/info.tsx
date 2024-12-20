@@ -1,83 +1,68 @@
-
-import { StyleSheet, Image, Platform } from 'react-native';
-
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-
-export default function TabTwoScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Combustível Inteligente:</ThemedText>
-      </ThemedView>
-      <ThemedText>Principal foco do app:</ThemedText>
-      <Collapsible title="Auxiliar na melhor escolha de preço do combustivel:">
-        <ThemedText>
-          Veículo Popular:{' '}
-        </ThemedText>
-        <ThemedText>
-        <ThemedText type="defaultSemiBold">Gasolina:</ThemedText>{' '}
-          13 Km/litros.
-        </ThemedText>
-        <ThemedText>
-        <ThemedText type="defaultSemiBold">Álcool:</ThemedText>{' '}
-          9 Km/litros.
-        </ThemedText>
-        <ThemedText>
-          Meu Veículo:{' '}
-        </ThemedText>
-        <ThemedText>
-        <ThemedText type="defaultSemiBold">Gasolina/Álcool:</ThemedText>{' '}
-        </ThemedText>
-        <ThemedText>
-          Veículo específico.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Saiba mais...</ThemedText>
+import { StyleSheet, Image, Platform } from 'react-native'; 
+import AntDesign from '@expo/vector-icons/AntDesign'; 
+import { Collapsible } from '@/components/Collapsible'; 
+import { ExternalLink } from '@/components/ExternalLink'; 
+import ParallaxScrollView from '@/components/ParallaxScrollView'; 
+import { ThemedText } from '@/components/ThemedText'; 
+import { ThemedView } from '@/components/ThemedView'; 
+import { IconSymbol } from '@/components/ui/IconSymbol'; 
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+ 
+export default function TabTwoScreen() { 
+  return ( 
+    <ParallaxScrollView 
+      headerBackgroundColor={{ light: 'green', dark: '#353636' }} 
+      headerImage={ 
+        <Image 
+          source={require('@/assets/images/3.jpg')} 
+          style={styles.reactLogo} 
+        /> 
+      }> 
+      <ThemedView style={styles.titleContainer}> 
+        <ThemedText type="title">Combustível Inteligente!</ThemedText> 
+      </ThemedView> 
+      <ThemedText>Principal foco do App:</ThemedText> 
+      <Collapsible title="Auxiliar"> 
+      <ThemedText> 
+      Auxiliar o motorista sobre a melhor opção de preço do combustível:<ThemedText type="defaultSemiBold"> Gasolina v Álcool.</ThemedText> 
+      </ThemedText> 
+        <ExternalLink href=""> 
+          <ThemedText type="link">Saiba mais...</ThemedText> 
+        </ExternalLink> 
+      </Collapsible> 
+      <Collapsible title="LGPD">
+      <ThemedText> 
+      Inibir e coibir tudo aquilo que contraria as léis, em específico a<ThemedText type="defaultSemiBold"> LGPD.</ThemedText> 
+      </ThemedText> 
+        <ExternalLink href=""> 
+          <ThemedText type="link">Saiba mais...</ThemedText> 
+        </ExternalLink> 
+      </Collapsible> 
+      <ThemedText>Deixe o seu feedback!</ThemedText>
+      <ExternalLink href="https://wa.me/message/ENYLA6IADQOWE1"> 
+          <ThemedText type="link">WhatsApp: <FontAwesome6 name="square-whatsapp" size={24} color="#7CFC00" /></ThemedText> 
         </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Submeter-se as principais regras, normas e protocolos da LGPD.">
-        <ThemedText>
-          O App, foca em ajudar o motorista a encontrar a melhor opção de preço do Combustível,{' '}
-          <ThemedText type="defaultSemiBold">descartando tudo aquilo que contraria as léis, em específico a LGPD.</ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Saiba mais...</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Deixe o seu feedback:">
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Saiba mais...</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-    </ParallaxScrollView>
-  );
-}
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-    textAlign: 'center',
-  },
-});
-
+    
+    </ParallaxScrollView> 
+  ); 
+} 
+ 
+const styles = StyleSheet.create({ 
+  headerImage: { 
+    color: '#808080', 
+    bottom: -90, 
+    left: -35, 
+    position: 'absolute', 
+  }, 
+  titleContainer: { 
+    flexDirection: 'row', 
+    gap: 8, 
+  }, 
+  reactLogo: { 
+    height: 400, 
+    width: 360, 
+    bottom: 0, 
+    left: 0, 
+    position: 'absolute', 
+  }, 
+}); 
